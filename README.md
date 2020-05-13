@@ -103,7 +103,7 @@ source imagepush.sh
 - 클러스터 접속 (콘솔에서 설정파일을 다운받고 path 설정, 뒤의 숫자 4개는 난수)
 
 ```bash
-export KUBECONFIG=~/.kube/kubeconfig-2003.yml
+export KUBECONFIG=~/.kube/<my-kubeconfig>.yml
 ```
 
 - 접속 및 클러스터 확인
