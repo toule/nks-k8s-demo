@@ -3,5 +3,5 @@
 THREADSTAG=`date +%s`
 echo $THREADSTAG
 
-docker build -t kube-registry.kr.ncr.ntruss.com/threads:$THREADSTAG .
-docker push kube-registry.kr.ncr.ntruss.com/threads:$THREADSTAG
+docker build -t <my-container-repo>/threads:$THREADSTAG .
+docker push <my-container-repo>/threads:$THREADSTAG

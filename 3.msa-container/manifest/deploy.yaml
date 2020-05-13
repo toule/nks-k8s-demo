@@ -19,7 +19,7 @@ spec:
       imagePullSecrets: #private container registry
       - name: regcred
       containers:
-      - image: kube-registry.kr.ncr.ntruss.com/web:1589393706
+      - image: <my-container-repo>/web:<TAG>
         name: web
         ports:
         - containerPort: 3000
@@ -55,7 +55,7 @@ spec:
       imagePullSecrets: #private container registry
       - name: regcred
       containers:
-      - image: kube-registry.kr.ncr.ntruss.com/api:1589393655
+      - image: <my-container-repo>/api:<TAG>
         name: api
         ports:
         - containerPort: 3000
@@ -91,7 +91,7 @@ spec:
       imagePullSecrets: #private container registry
       - name: regcred
       containers:
-      - image: kube-registry.kr.ncr.ntruss.com/post:1589393659
+      - image: <my-container-repo>/post:<TAG>
         name: posts
         ports:
         - containerPort: 3000
@@ -127,7 +127,7 @@ spec:
       imagePullSecrets: #private container registry
       - name: regcred
       containers:
-      - image: kube-registry.kr.ncr.ntruss.com/threads:1589393675
+      - image: <my-container-repo>/threads:<TAG>
         name: threads
         ports:
         - containerPort: 3000
@@ -163,7 +163,7 @@ spec:
       imagePullSecrets: #private container registry
       - name: regcred
       containers:
-      - image: kube-registry.kr.ncr.ntruss.com/users:1589393690
+      - image: <my-container-repo>/users:<TAG>
         name: users
         ports:
         - containerPort: 3000

@@ -1,5 +1,5 @@
 #/bin/sh
-docker login kube-registry.kr.ncr.ntruss.com
+docker login <my-container-repo>
 dir=$(pwd)
 
 
