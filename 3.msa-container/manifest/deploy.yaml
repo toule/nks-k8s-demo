@@ -1,0 +1,178 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels:
+    role: msa-web
+    app: msa
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      role: msa-web
+  template:
+    metadata:
+      labels:
+        app: msa
+        role: msa-web
+    spec:
+      imagePullSecrets: #private container registry
+      - name: regcred
+      containers:
+      - image: kube-registry.kr.ncr.ntruss.com/web:1589393706
+        name: web
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "10Mi"
+          limits:
+            cpu: "20m"
+            memory: "20Mi"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  labels:
+    app: msa
+    role: msa-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      role: msa-api
+  template:
+    metadata:
+      labels:
+        app: msa
+        role: msa-api
+    spec:
+      imagePullSecrets: #private container registry
+      - name: regcred
+      containers:
+      - image: kube-registry.kr.ncr.ntruss.com/api:1589393655
+        name: api
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "10Mi"
+          limits:
+            cpu: "20m"
+            memory: "20Mi"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: posts
+  labels:
+    app: msa
+    role: msa-post
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      role: msa-post
+  template:
+    metadata:
+      labels:
+        app: msa
+        role: msa-post
+    spec:
+      imagePullSecrets: #private container registry
+      - name: regcred
+      containers:
+      - image: kube-registry.kr.ncr.ntruss.com/post:1589393659
+        name: posts
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "10Mi"
+          limits:
+            cpu: "20m"
+            memory: "20Mi"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: threads
+  labels:
+    app: msa
+    role: msa-threads
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      role: msa-threads
+  template:
+    metadata:
+      labels:
+        app: msa
+        role: msa-threads
+    spec:
+      imagePullSecrets: #private container registry
+      - name: regcred
+      containers:
+      - image: kube-registry.kr.ncr.ntruss.com/threads:1589393675
+        name: threads
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "10Mi"
+          limits:
+            cpu: "20m"
+            memory: "20Mi"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users
+  labels:
+    app: msa
+    role: msa-users
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      role: msa-users
+  template:
+    metadata:
+      labels:
+        app: msa
+        role: msa-users
+    spec:
+      imagePullSecrets: #private container registry
+      - name: regcred
+      containers:
+      - image: kube-registry.kr.ncr.ntruss.com/users:1589393690
+        name: users
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "10Mi"
+          limits:
+            cpu: "20m"
+            memory: "20Mi"
