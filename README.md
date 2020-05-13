@@ -31,7 +31,7 @@
 - 생성한 레지스트리에 접근 (접근 명령어 참고)
 - 처음에 접근할 경우 Access key 및 Secret key가 필요하나 필자는 기존에 로그인을 해놓은 상황
 
-![container-registry](./images/container-registry.png)
+![container-registry](./images/container-registry-v1.png)
 
 ![registry-connection](./images/registry-connection.png)
 
@@ -94,7 +94,7 @@ source imagepush.sh
 
 ![imagepush](./images/imagepush.png)
 
-![image_confirm](./images/image_confirm.png)
+![image_confirm](./images/image-confirm-v1.png)
 
 
 
