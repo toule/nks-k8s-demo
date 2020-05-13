@@ -15,6 +15,13 @@
 
 
 
+## 참고사항
+
+- 20년 5월 14일 기준으로 작성됨
+- Manifest 수정시 반복되는 Container Repo의 경우 In 명령어를 통해 한번에 바꾸는 것을 권장함
+
+
+
 ## Container Registry 생성 
 
 - 생성해둔 Object Storage를 활용하여 Container Registry 생성
