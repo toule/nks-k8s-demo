@@ -112,7 +112,7 @@ export KUBECONFIG=~/.kube/<my-kubeconfig>.yml
 kubectl cluster-info
 ```
 
-![cluster-info](/Users/ray/Documents/Test/Container/NKS/images/cluster-info.png)
+![cluster-info](./images/cluster-info.png)
 
 - private repository를 활용하기 위해 secret에 등록해야함 (https://docs.ncloud.com/ko/container/ncr-1-3.html)
   - --docker-server = container registry endpoint
@@ -127,7 +127,7 @@ kubectl create secret docker-registry regcred --docker-server=<registry-end-poin
   - Container Registry를 사용하기 위해 template의 spec에서 Secrect에 대한 설정 추가
   - 컨테이너에 대한 이미지 및 태그 값 업데이트
 
-  ![manifest_deploy](/Users/ray/Documents/Test/Container/NKS/images/manifest_deploy.png)
+  ![manifest_deploy](./images/manifest_deploy.png)
 
 - 배포 (deployment)
 
@@ -168,7 +168,7 @@ kubectl delete -f svc.yaml
 source push.sh
 ```
 
-![msa-repo](/Users/ray/Documents/Test/Container/NKS/images/msa-repo.png)
+![msa-repo](./images/msa-repo.png)
 
 
 
@@ -183,7 +183,7 @@ kubectl create -f deploy.yaml
 kubectl get pods
 ```
 
-![msa-pod](/Users/ray/Documents/Test/Container/NKS/images/msa-pod.png)
+![msa-pod](./images/msa-pod.png)
 
 - Expose (Service)
   - Ingress로 묶기 위해서는 deployment를 nodeport로 expose
@@ -193,7 +193,7 @@ kubectl create -f svc.yaml
 kubectl get svc
 ```
 
-![msa-svc](/Users/ray/Documents/Test/Container/NKS/images/msa-svc.png)
+![msa-svc](./images/msa-svc.png)
 
 - Ingress
   - 현재 nginx controller가 동작하는지 확인 필요
@@ -204,18 +204,18 @@ kubectl get svc
 kubectl get pods -n ingress-nginx
 ```
 
-![ingress-controller](/Users/ray/Documents/Test/Container/NKS/images/ingress-controller.png)
+![ingress-controller](./images/ingress-controller.png)
 
 ```bash
 kubectl get svc -n ingress-nginx
 ```
 
-![ingress-svc](/Users/ray/Documents/Test/Container/NKS/images/ingress-svc.png)
+![ingress-svc](./images/ingress-svc.png)
 
 - annotation 설정
   - Nginx Ingress를 사용하므로 annotation 설정 필요
 
-![ingress-manifest](/Users/ray/Documents/Test/Container/NKS/images/ingress-manifest.png)
+![ingress-manifest](./images/ingress-manifest.png)
 
 - Ingress 배포
 
@@ -226,6 +226,6 @@ kubectl get ingress
 
 - 결과 확인
 
-![result-msa](/Users/ray/Documents/Test/Container/NKS/images/result-msa.png)
+![result-msa](./images/result-msa.png)
 
-![msa-result-1](/Users/ray/Documents/Test/Container/NKS/images/msa-result-1.png)
+![msa-result-1](./images/msa-result-1.png)
