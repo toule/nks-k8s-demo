@@ -229,3 +229,19 @@ kubectl get ingress
 ![result-msa](./images/result-msa.png)
 
 ![msa-result-1](./images/msa-result-1.png)
+
+#### 인프라 삭제
+
+##### Component 삭제
+
+```bash
+kubectl delete -f deploy.yaml
+kubectl delete -f svc.yaml
+kubectl delete -f ingress.yaml
+```
+
+##### Cluster 삭제 (콘솔)
+
+- kubernetes Service -> (클러스터) 삭제하기
+
+- Load Balancer에서 Nginx Load Balancer가 삭제 되었는지 확인
